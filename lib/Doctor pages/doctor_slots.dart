@@ -91,32 +91,37 @@ class _DoctorSlotsState extends State<DoctorSlots> {
                     int index = e.key;
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: Container(
-                        height: 120, // Increase the height to make the box larger
-                        decoration: BoxDecoration(
-                          color: AppColors.accentColor,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: ListTile(
-                          contentPadding: const EdgeInsets.all(10),
-                          leading: Container(
-                            width: 70,
-                            height: 70,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.grey[200],
-                            ),
-                            child: CircleAvatar(
-                              backgroundImage: AssetImage(slots[index].imagePath),
-                              backgroundColor: Colors.transparent,
-                            ),
+                      child: Material(
+                        elevation: 4,
+                        shadowColor: Colors.grey.withOpacity(0.8),
+                        borderRadius: BorderRadius.circular(10),
+                        child: Container(
+                          height: 120, // Increase the height to make the box larger
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          title: Text(
-                            slots[index].patientName,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          subtitle: Text(
-                            slots[index].appointmentTime.toString(),
+                          child: ListTile(
+                            contentPadding: const EdgeInsets.all(10),
+                            leading: Container(
+                              width: 70,
+                              height: 70,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.grey[200],
+                              ),
+                              child: CircleAvatar(
+                                backgroundImage: AssetImage(slots[index].imagePath),
+                                backgroundColor: Colors.transparent,
+                              ),
+                            ),
+                            title: Text(
+                              slots[index].patientName,
+                              style: const TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text(
+                              slots[index].appointmentTime.toString(),
+                            ),
                           ),
                         ),
                       ),

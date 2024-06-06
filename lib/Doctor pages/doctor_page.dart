@@ -16,7 +16,7 @@ class _DoctorPageState extends State<DoctorPage> {
   void _onItemTapped(int index) {
     switch (index) {
       case 1:
-        Get.offAllNamed('/profile');
+        Get.toNamed('/docProfile');
         break;
       case 2:
         Get.toNamed('/docSlot');
@@ -130,7 +130,9 @@ class _DoctorPageState extends State<DoctorPage> {
             top: 70,
             right: 10,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('/payment');
+              },
               child: const Icon(
                 Icons.account_balance_wallet_outlined,
                 size: 50,
@@ -294,34 +296,39 @@ class _DoctorPageState extends State<DoctorPage> {
                         int index = e.key;
                         return Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: Container(
-                            height: 120,
-                            decoration: BoxDecoration(
-                                color: AppColors.accentColor,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: ListTile(
-                              leading: Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.grey[200],
+                          child: Material(
+                            elevation: 4,
+                            shadowColor: Colors.grey.withOpacity(0.8),
+                            borderRadius: BorderRadius.circular(10),
+                            child: Container(
+                              height: 120,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: ListTile(
+                                leading: Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.grey[200],
+                                  ),
+                                  child: CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage(appointments[index].imagePath),
+                                    backgroundColor: Colors
+                                        .transparent, // Ensure transparent background
+                                  ),
                                 ),
-                                child: CircleAvatar(
-                                  backgroundImage:
-                                      AssetImage(appointments[index].imagePath),
-                                  backgroundColor: Colors
-                                      .transparent, // Ensure transparent background
+                                title: Text(
+                                  appointments[index].patientName,
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold),
                                 ),
+                                subtitle: Text(appointments[index]
+                                    .appointmentTime
+                                    .toString()),
                               ),
-                              title: Text(
-                                appointments[index].patientName,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              subtitle: Text(appointments[index]
-                                  .appointmentTime
-                                  .toString()),
                             ),
                           ),
                         );
@@ -406,7 +413,9 @@ class _DoctorPageState extends State<DoctorPage> {
                       child: Row(
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.back();
+                            },
                             icon: const Icon(
                               Icons.cancel,
                               color: AppColors.textColor,
@@ -440,8 +449,7 @@ class _DoctorPageState extends State<DoctorPage> {
                 leading: const Icon(Icons.person_2),
                 title: const Text('My Profile'),
                 onTap: () {
-                  // Handle Settings tap
-                  Get.back(); // Close the drawer
+                 Get.toNamed('/docProfile');
                 },
               ),
               ListTile(
@@ -449,8 +457,7 @@ class _DoctorPageState extends State<DoctorPage> {
                 leading: const Icon(Icons.credit_card),
                 title: const Text('Payments'),
                 onTap: () {
-                  // Handle Logout tap
-                  Get.back(); // Close the drawer
+                  Get.toNamed('/payment');
                 },
               ),
               ListTile(
@@ -492,14 +499,14 @@ class _DoctorPageState extends State<DoctorPage> {
                 leading: const Icon(Icons.security),
                 title: const Text('Privacy Policy'),
                 onTap: () {
-
+                  Get.toNamed('/tooth');
                 },
               ),
               ListTile(
                 leading: const Icon(Icons.help),
                 title: const Text('Help Centre'),
                 onTap: () {
-
+                  Get.toNamed('/tooth');
                 },
               ),
               Padding(
@@ -516,7 +523,9 @@ class _DoctorPageState extends State<DoctorPage> {
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed('/doctorLogin');
+                        },
                         borderRadius: BorderRadius.circular(10),
                         child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,

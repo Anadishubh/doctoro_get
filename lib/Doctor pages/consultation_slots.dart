@@ -68,7 +68,7 @@ class SlotCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppColors.borderColor,
+      color: AppColors.buttonColor,
       elevation: 5,
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: Padding(
