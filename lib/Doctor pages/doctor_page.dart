@@ -19,11 +19,12 @@ class _DoctorPageState extends State<DoctorPage> {
         Get.toNamed('/docProfile');
         break;
       case 2:
-        Get.toNamed('/docSlot');
-        break;
-      case 3:
         Get.toNamed('/consult');
         break;
+      case 3:
+        Get.toNamed('/docSlot');
+        break;
+
     }
   }
 
@@ -194,7 +195,7 @@ class _DoctorPageState extends State<DoctorPage> {
                     color: Colors.transparent,
                     child: InkWell(
                       onTap: () {
-                        Get.toNamed('/docSlot');
+                        Get.toNamed('/consult');
                       },
                       borderRadius: BorderRadius.circular(10),
                       child: const Column(
@@ -240,7 +241,7 @@ class _DoctorPageState extends State<DoctorPage> {
                     color: Colors.transparent,
                     child: InkWell(
                       onTap: () {
-                        Get.toNamed('/consult');
+                        Get.toNamed('/docSlot');
                       },
                       borderRadius: BorderRadius.circular(10),
                       child: const Column(

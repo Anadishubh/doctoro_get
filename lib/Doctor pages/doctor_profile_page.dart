@@ -29,20 +29,37 @@ class DoctorProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(width: 16.0),
                 const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Mr. Anuj Maurya',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      '+91 - 9873574896',
-                    ),
-                    Text(
-                      'anuj@gmail.com',
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 5.0),
+                          child: Text(
+                            'Mr. Anuj Maurya',
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10,),
+                        Row(
+                          children: [
+                            Icon(Icons.phone_android,color: Colors.grey,),
+                            SizedBox(width: 10,),
+                            Text('+91 - 9873574896'),
+                          ],
+                        ),
+                        SizedBox(height: 10,),
+                        Row(
+                          children: [
+                            Icon(Icons.phone_android,color: Colors.grey,),
+                            SizedBox(width: 10,),
+                            Text('xyz@gmail.com'),
+                          ],
+                        ),
+                      ],
                     ),
                   ],
                 ),

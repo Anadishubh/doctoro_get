@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       title: 'Doctro_get',
-      home:   DoctorPage(),
+      home:   const DoctorPage(),
       // initialRoute: '/splash',
       getPages: [
         GetPage(name: '/splash', page:()=>const SplashScreen()),
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/consult', page:()=>const ManageSlotsScreen()),
         GetPage(name: '/tooth', page: ()=> const ToothLess()),
         GetPage(name: '/payment', page: ()=>DoctorPayment()),
-        GetPage(name: '/docProfile', page: ()=>DoctorProfilePage()),
+        GetPage(name: '/docProfile', page: ()=>const DoctorProfilePage()),
       ],
     );
   }
